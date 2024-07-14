@@ -1,0 +1,769 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #a945ec;
+    --secondary-color: #C096FC;
+    --third-color: #D3BBF5;
+    --button-color: #F7F7F7;
+    --font-color1: #000000;
+    --font-color2: #FFFFFF;
+}
+
+/* NAVBAR START */
+.navbar {
+    background-color: var(--button-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 0px 50px;
+    height: 64px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-bottom: 1px solid black;
+}
+
+.navbar .navbar-icon .navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: tomato; */
+    /* color: var(--button-color);
+    font-size: 20px;
+    font-weight: 400; */
+}
+
+.navbar .navbar-nav {
+    /* background-color: tomato; */
+    display: flex;
+    align-items: center;
+    gap: 33px;
+    /* margin-left: 10%; */
+}
+
+.navbar .navbar-nav a {
+    color: var(--font-color1);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar .navbar-nav a.active {
+    color: var(--font-color1);
+    border-bottom: 1px solid black;
+}
+
+.navbar .navbar-nav a:hover {
+    border-bottom: 1px solid black;
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav .btn-konsultasi {
+    display: none;
+}
+
+.navbar .navbar-extra {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .navbar-extra .btn-konsultasi {
+    background-color: var(--secondary-color);
+    color: var(--font-color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 15.336px 5px 8px;
+    border-radius: 10px;
+    gap: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .navbar-extra .btn-konsultasi:hover {
+    background-color: rgb(57, 212, 57);
+}
+
+.navbar .navbar-extra .user-profile {
+    display: flex;
+}
+
+#hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* NAVBAR END */
+
+/* HOME PAGE START */
+
+#home {
+    background-color: var(--primary-color);
+    position: relative;
+    display: flex;
+    min-height: calc(100vh - 64px);
+    padding-bottom: 5%;
+    border-bottom: 1px solid black;
+    top: 64px;
+}
+
+#home .container-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 6%;
+    /* padding-top: 3%; */
+    width: 60%;
+    gap: 17px;
+}
+
+#home .container-left .headline h1 {
+    color: var(--font-color2);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#home .container-left .description {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#home .container-left .description .p1 {
+    color: var(--font-color2);
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#home .container-left .description .p2 {
+    color: var(--font-color2);
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+#home .container-left .btn-start {
+    background-color: var(--button-color);
+    color: var(--font-color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 12px 24px;
+    height: 54px;
+    border: 1px solid black;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#home .container-left .btn-start:hover {
+    background-color: rgb(57, 212, 57);
+}
+
+#home .container-right {
+    /* background-color: aqua; */
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding-top: 5%; */
+    width: 40%;
+    gap: 10px;
+}
+
+#home .container-right .image-1 {
+    /* position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    max-width: 70%; */
+    max-width: 70%;
+}
+
+#home .container-right p {
+    background-color: black;
+    color: var(--font-color2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+/* HOME PAGE END */
+
+/* OPTION BUTTON SKRINING START */
+.dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialog-box {
+    background: white;
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* .dialog-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+} */
+
+.dialog-buttons {
+    margin-top: 20px;
+}
+
+.dialog-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-yes {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-no {
+    background-color: #f44336;
+    color: white;
+}
+
+/* .btn-cancel {
+    background-color: #808080;
+    color: white;
+  } */
+
+/* OPTION BUTTON SKRINING END */
+
+/* TIPS PAGE START */
+#tips {
+    background-color: var(--primary-color);
+    position: relative;
+    min-height: calc(100vh - 64px);
+    display: flex;
+    padding-bottom: 5%;
+    border-bottom: 1px solid black;
+    top: 64px;
+}
+
+#tips .container-left {
+    /* background-color: tomato; */
+    position: relative;
+    padding-top: 9%;
+    width: 50%;
+}
+
+#tips .container-left .image-1 {
+    /* background-color: blue; */
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    max-width: 70%;
+}
+
+#tips .container-right {
+    /* background-color: tomato; */
+    display: flex;
+    flex-direction: column;
+    padding: 5% 3% 0 3%;
+    width: 50%;
+    gap: 17px;
+}
+
+#tips .container-right .headline h1 {
+    color: var(--font-color2);
+    font-weight: 600;
+    font-size: 40px;
+}
+
+#tips .container-right .description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#tips .container-right .description p {
+    color: var(--font-color2);
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#tips .container-right .description .description-list {
+    padding-left: 1.5%;
+}
+
+#tips .container-right .description .description-list li {
+    color: var(--font-color2);
+    list-style: inside;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+/* TIPS PAGE END */
+
+/* ABOUT DEMENSIA PAGE START */
+#aboutDemensia {
+    background-color: var(--primary-color);
+    position: relative;
+    max-height: calc(100vh - 64px);
+    display: flex;
+    padding-bottom: 5%;
+    top: 64px;
+}
+
+#aboutDemensia .headline h1 {
+    color: var(--font-color2);
+}
+
+#aboutDemensia .description {
+    color: var(--font-color2);
+}
+
+#aboutDemensia .container-right {
+    /* background-color: tomato; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-left: 6%;
+    padding-top: 5%;
+    padding-right: 6%;
+    padding-bottom: 5%;
+    width: 60%;
+}
+
+#aboutDemensia .container-right .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+#aboutDemensia .container-right .description .description-list li {
+    list-style: inside;
+    list-style-type: decimal;
+}
+
+#aboutDemensia .container-right .description .description-list2 li {
+    list-style: inside;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.swiper-slide::-webkit-scrollbar {
+    display: none;
+}
+
+.swiper-slide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: white !important;
+}
+
+/* .slide-2 {
+    overflow-y: auto;
+} */
+
+#aboutDemensia .container-left {
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding-top: 5%; */
+    width: 40%;
+    gap: 10px;
+}
+
+/* ABOUT DEMENSIA PAGE END */
+
+/* FOOTER PAGE START */
+#footer {
+    background-color: var(--button-color);
+    position: relative;
+    max-height: calc(100vh - 64px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: fit-content;
+    padding: 5% 8%;
+    top: 64px;
+    gap: 20px;
+}
+
+/* #footer .container-left {
+    display: flex;
+    align-items: center;
+} */
+
+#footer .container-right {
+    /* background-color: #f44336; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#footer .container-right .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#footer .container-right .description a {
+    color: var(--font-color1);
+}
+
+#footer .container-right .social-media {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer .container-right .kontak {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+#footer .container-right .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#footer .container-right .social-media .icon {
+    display: flex;
+    gap: 16px;
+}
+
+/* FOOTER PAGE END */
+
+
+/*-------- Responsive Media Queries --------*/
+
+/* LARGE DESKTOP DEVICE START */
+@media (min-width: 1440px) {}
+
+/* LARGE DESKTOP DEVICE END */
+
+/* SMALL DESKTOP DEVICE START */
+@media (max-width: 992px) {
+
+    /* NAVBAR START */
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .navbar-nav {
+        gap: 20px;
+    }
+
+    /* NAVBAR END */
+
+    /* HOME START */
+    .container-right .image-1 {
+        width: 250px;
+    }
+
+    /* HOME END */
+}
+
+/* SMALL DESKTOP DEVICE END */
+
+/* TABLET DEVICE START */
+@media (max-width: 768px) {
+
+    /* NAVBAR RESPONSIVE START */
+    #hamburger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar {
+        padding: 0px 50px;
+    }
+
+    .navbar .btn-login {
+        background-color: var(--button-color);
+        color: var(--font-color1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 72px;
+        height: 36px;
+        border-radius: 7px;
+    }
+
+    .navbar .navbar-nav.active {
+        padding: 20px 0px;
+        right: 0;
+        border-left: 1px solid black;
+    }
+
+    .navbar .navbar-nav {
+        background-color: var(--button-color);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 100%;
+        right: -100%;
+        width: 15rem;
+        height: 100vh;
+        gap: 50px;
+        padding: 20px 0px;
+        transition: all .3s ease;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    .navbar .navbar-nav .btn-konsultasi {
+        background-color: var(--secondary-color);
+        color: var(--font-color1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        padding: 5px 10px;
+        gap: 5px;
+    }
+
+    .navbar .navbar-extra .btn-konsultasi {
+        display: none;
+    }
+
+    /* NAVBAR RESPONSIVE END */
+
+    /* HOME PAGE START */
+    #home {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5%;
+        gap: 10px;
+    }
+
+    #home .container-left {
+        order: 2;
+        width: 100%;
+        padding-right: 20px;
+    }
+
+    #home .container-right {
+        /* background-color: tomato; */
+        order: 1;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #home .container-right .image-1 {
+        width: 50%;
+    }
+
+    #home .container-right p {
+        display: none;
+    }
+
+    /* HOME PAGE END */
+
+    /* TIPS PAGE START */
+    #tips .container-left {
+        width: 0%;
+    }
+
+    #tips .container-right {
+        width: 100%;
+        padding-left: 6%;
+        padding-right: 30px;
+    }
+
+    #tips .container-left .image-1 {
+        display: none;
+    }
+
+    /* TIPS PAGE END */
+
+    /* ABOUT DEMENSIA PAGE START */
+    #aboutDemensia .container-right {
+        width: 100%;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    #aboutDemensia .container-right .swiper-wrapper {
+        height: 50%;
+    }
+
+    #aboutDemensia .container-left {
+        width: 0%;
+    }
+
+    #aboutDemensia .container-left .image-1 {
+        display: none;
+    }
+
+    #aboutDemensia .container-right .swiper-button-next,
+    #aboutDemensia .container-right .swiper-button-prev {
+        position: absolute;
+        top: 25%;
+    }
+
+    #aboutDemensia .container-right .swiper-pagination {
+        position: absolute;
+        top: 55%;
+    }
+
+    /* ABOUT DEMENSIA PAGE END */
+}
+
+/* TABLET DEVICE END */
+
+
+
+
+
+/* PHONES DEVICE START */
+@media (max-width: 600px) {
+
+    /* HOME START */
+    #home .container-left .headline h1 {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    #home .container-left .description .p1 {
+        /* text-align: center; */
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    #home .container-left .description .p2 {
+        color: var(--font-color2);
+        /* text-align: center; */
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    #home .container-left .btn-start {
+        background-color: var(--button-color);
+        color: var(--font-color1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        border-radius: 10px;
+        padding: 17px 16px;
+        font-size: 14px;
+        height: 34px;
+    }
+
+    /* HOME END */
+
+    /* TIPS PAGE START */
+    #tips .container-right .headline h1 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    #tips .container-right .description p {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    #tips .container-right .description .description-list li {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    /* TIPS PAGE END */
+
+    /* ABOUT DEMENSIA PAGE START */
+    /* #aboutDemensia {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    #aboutDemensia .container-left .headline h1 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    #aboutDemensia .container-left .description p {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    #aboutDemensia .container-left .description .description-list li {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    #aboutDemensia .container-right .headline h1 {
+        font-size: 20px;
+    }
+
+    #aboutDemensia .container-right .description p {
+        font-size: 14px;
+    }
+
+    #aboutDemensia .container-right .description-list {
+        font-size: 14px;
+    }
+
+    /* ABOUT DEMENSIA PAGE END */
+
+    /* FOOTER PAGE START */
+    #footer .container-right {
+        display: flex;
+        flex-wrap: wrap;
+        /* gap: 82px; */
+    }
+
+    /* FOOTER PAGE END */
+}

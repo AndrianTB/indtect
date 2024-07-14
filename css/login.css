@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    height: 100vh;
+}
+
+:root {
+    --primary-color: #a945ec;
+    --secondary-color: #C096FC;
+    --third-color: #D3BBF5;
+    --button-color: #F7F7F7;
+    --font-color1: #000000;
+    --font-color2: #FFFFFF;
+}
+
+/* NAVBAR START */
+.navbar {
+    background-color: var(--button-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 0px 50px;
+    height: 64px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-bottom: 1px solid black;
+}
+
+.navbar .navbar-icon .navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .navbar-nav {
+    /* background-color: tomato; */
+    display: flex;
+    align-items: center;
+    gap: 33px;
+    /* margin-left: 10%; */
+}
+
+.navbar .navbar-nav a {
+    color: var(--font-color1);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar .navbar-nav a.active {
+    color: var(--font-color1);
+    border-bottom: 1px solid black;
+}
+
+.navbar .navbar-nav a:hover {
+    transition: 0.2s linear;
+    border-bottom: 1px solid black;
+}
+
+.navbar .navbar-nav .btn-konsultasi {
+    display: none;
+}
+
+.navbar .navbar-extra {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .navbar-extra .btn-konsultasi {
+    background-color: var(--secondary-color);
+    color: var(--font-color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 15.336px 5px 8px;
+    border-radius: 10px;
+    gap: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .navbar-extra .btn-konsultasi:hover {
+    background-color: rgb(57, 212, 57);
+}
+
+.navbar .navbar-extra .user-profile {
+    display: flex;
+}
+
+#hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* NAVBAR END */
+
+/* MAIN PAGE START */
+.container {
+    background-color: var(--primary-color);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 64px);
+    top: 64px;
+}
+
+.container-tabel {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 1%;
+    width: 560px;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.2);
+    gap: 15px;
+    border-radius: 10px;
+}
+
+.container-tabel input::placeholder {
+    color: #201D1D;
+    font-weight: 300;
+}
+
+.container-tabel .header {
+    /* background-color: tomato; */
+    display: flex;
+    text-align: center;
+}
+
+.container-tabel .header span {
+    font-weight: 500;
+    font-size: 32px;
+    /* font-weight: 500; */
+}
+
+.container-tabel .main {
+    /* background-color: tomato; */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.container-tabel .main .container-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.container-tabel .main .container-name label {
+    color: var(--font-color1);
+    line-height: normal;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.container-tabel .main .container-name input {
+    background-color: transparent;
+    color: var(--font-color1);
+    border: 1px solid black;
+    width: 200px;
+    padding: 6px 5px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.container-tabel .main .container-age {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.container-tabel .main .container-age label {
+    color: var(--font-color1);
+    line-height: normal;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.container-tabel .main .container-age input {
+    color: var(--font-color1);
+    background-color: transparent;
+    border: 1px solid black;
+    width: 200px;
+    padding: 6px 5px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.container-tabel .main .container-gender label {
+    color: var(--font-color1);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 3px 0px;
+}
+
+.container-tabel .container-footer {
+    /* background-color: tomato; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-tabel .container-footer .btn-start {
+    background-color: var(--font-color2);
+    color: var(--font-color1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid black;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container-tabel .container-footer .btn-start:hover {
+    color: black;
+    background-color: rgb(57, 212, 57);
+}
+
+/* MAIN PAGE END */
+
+
+/*-------- Responsive Media Queries -------- */
+
+/* SMALL DESKTOP DEVICE START */
+@media (max-width: 992px) {
+
+    /* NAVBAR START */
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .navbar-nav {
+        gap: 20px;
+    }
+
+    /* NAVBAR END */
+}
+
+/* SMALL DESKTOP DEVICE END */
+
+/* TABLET DEVICE START */
+@media (max-width: 768px) {
+
+    /* NAVBAR RESPONSIVE START */
+    #hamburger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar {
+        padding: 0px 50px;
+    }
+
+    .navbar .btn-login {
+        background-color: var(--button-color);
+        color: var(--font-color1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 72px;
+        height: 36px;
+        border-radius: 7px;
+    }
+
+    .navbar .navbar-nav.active {
+        padding: 20px 0px;
+        right: 0;
+        border-left: 1px solid black;
+    }
+
+    .navbar .navbar-nav {
+        background-color: var(--button-color);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 100%;
+        right: -100%;
+        width: 15rem;
+        height: 100vh;
+        gap: 50px;
+        padding: 20px 0px;
+        transition: all .3s ease;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    .navbar .navbar-nav .btn-konsultasi {
+        background-color: var(--secondary-color);
+        color: var(--font-color1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        padding: 5px 10px;
+        gap: 5px;
+    }
+
+    .navbar .navbar-extra .btn-konsultasi {
+        display: none;
+    }
+
+    /* NAVBAR RESPONSIVE END */
+
+}
+
+/* TABLET DEVICE END */
+
+/* PHONES DEVICE START */
+@media (max-width: 600px) {
+
+    /* MAIN PAGE START */
+    .container {
+        padding: 10px 3%;
+    }
+
+    .container-tabel .header span {
+        font-weight: 500;
+        font-size: 24px;
+        /* font-weight: 500; */
+    }
+
+    /* MAIN PAGE END */
+}
+
+/* PHONES DEVICE END */

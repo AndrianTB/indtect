@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #a945ec;
+    --secondary-color: #C096FC;
+    --third-color: #D3BBF5;
+    --button-color: #F7F7F7;
+    --font-color1: #000000;
+    --font-color2: #FFFFFF;
+}
+
+/* NAVBAR START */
+.navbar {
+    background-color: var(--button-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 0px 50px;
+    height: 64px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-bottom: 1px solid black;
+}
+
+.navbar .navbar-icon .navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .navbar-nav {
+    /* background-color: tomato; */
+    display: flex;
+    align-items: center;
+    gap: 33px;
+    /* margin-left: 10%; */
+}
+
+.navbar .navbar-nav a {
+    color: var(--font-color1);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar .navbar-nav a.active {
+    color: var(--font-color1);
+    border-bottom: 1px solid black;
+}
+
+.navbar .navbar-nav a:hover {
+    transition: 0.2s linear;
+    border-bottom: 1px solid black;
+}
+
+.navbar .navbar-nav .btn-konsultasi {
+    display: none;
+}
+
+.navbar .navbar-extra {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .navbar-extra .btn-konsultasi {
+    background-color: var(--secondary-color);
+    color: var(--font-color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 15.336px 5px 8px;
+    border-radius: 10px;
+    gap: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .navbar-extra .btn-konsultasi:hover {
+    background-color: rgb(57, 212, 57);
+}
+
+.navbar .navbar-extra .user-profile {
+    display: flex;
+}
+
+#hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* NAVBAR END */
+
+/* MAIN PAGE START */
+.main {
+    background-color: var(--primary-color);
+    position: relative;
+    display: flex;
+    min-height: calc(100vh - 64px);
+    top: 64px;
+    /* padding-bottom: 5%; */
+}
+
+.main .container-left {
+    /* background-color: tomato; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3% 2% 0 2%;
+    width: 100%;
+}
+
+.main .container-left .left {
+    background-color: var(--secondary-color);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.2);
+    max-width: 590px;
+    padding: 11px 30px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.main .container-left .left .header {
+    text-align: center;
+}
+
+.list ul li {
+    list-style: inside;
+}
+
+.divider-line {
+    border-top: 2px solid #000;
+    flex-grow: 1;
+    margin: 10px 0;
+}
+
+.main .container-left .left .footer {
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    gap: 11px;
+}
+
+.main .container-left .left .footer button {
+    background-color: var(--font-color2);
+    color: var(--font-color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 35px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid black;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main .container-left .left .footer button:hover {
+    color: black;
+    background-color: rgb(57, 212, 57);
+}
+
+/* MAIN PAGE END */
+
+
+
+
+
+
+
+
+
+/*-------- Responsive Media Queries --------*/
+
+/* LARGE DESKTOP DEVICE START */
+@media (min-width: 1440px) {}
+
+/* LARGE DESKTOP DEVICE END */
+
+@media (max-width: 1078px) {
+
+    /* MAIN PAGE START */
+    .main {
+        flex-direction: column;
+    }
+
+    .main .container-left {
+        /* background-color: tomato; */
+        width: 100%;
+        padding: 2% 7%;
+    }
+
+    .main .container-right {
+        width: 100%;
+    }
+}
+
+
+/* SMALL DESKTOP DEVICE START */
+@media (max-width: 992px) {
+
+    /* NAVBAR START */
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .navbar-nav {
+        gap: 20px;
+    }
+
+    /* NAVBAR END */
+}
+
+/* SMALL DESKTOP DEVICE END */
+
+/* TABLET DEVICE START */
+@media (max-width: 768px) {
+
+    /* NAVBAR RESPONSIVE START */
+    #hamburger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar {
+        padding: 0px 50px;
+    }
+
+    .navbar .btn-login {
+        background-color: var(--button-color);
+        color: var(--font-color1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 72px;
+        height: 36px;
+        border-radius: 7px;
+    }
+
+    .navbar .navbar-nav.active {
+        padding: 20px 0px;
+        right: 0;
+        border-left: 1px solid black;
+    }
+
+    .navbar .navbar-nav a.active {
+        color: var(--font-color1);
+        border-bottom: none;
+    }
+
+    .navbar .navbar-nav {
+        background-color: var(--button-color);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        top: 100%;
+        right: -100%;
+        width: 15rem;
+        height: 100vh;
+        gap: 50px;
+        padding: 20px 0px;
+        transition: all .3s ease;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    .navbar .navbar-nav .btn-konsultasi {
+        background-color: var(--secondary-color);
+        color: var(--font-color1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        padding: 5px 10px;
+        gap: 5px;
+    }
+
+    .navbar .navbar-extra .btn-konsultasi {
+        display: none;
+    }
+
+    /* NAVBAR RESPONSIVE END */
+
+    /* MAIN PAGE START */
+    .option1 .list ul li {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .option2 .list ul li {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .main .container-left .left .footer button {
+        padding: 7px 35px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    /* MAIN PAGE END */
+
+}
+
+/* TABLET DEVICE END */
+
+/* PHONES DEVICE START */
+@media (max-width: 600px) {}
+
+/* PHONES DEVICE END */
